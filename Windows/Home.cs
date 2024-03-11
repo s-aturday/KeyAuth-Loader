@@ -38,22 +38,15 @@ namespace hyst
             {
                 Thread.Sleep(10000);
                 timer1.Stop();
-                string a = "https://cdn.discordapp.com/attachments/1158228877605339196/1160841968205713529/example.dll";
-                string b = Path.Combine(Path.GetTempPath(), Path.GetRandomFileName());
-                string c = Path.Combine(b, Path.GetRandomFileName());
-                Directory.CreateDirectory(b);
-                WebClient webClient = new WebClient();
-                webClient.DownloadFile(a, c);
                 try
                 {
                     Injector injector = new Injector("Gorilla Tag");
-                    injector.Inject(File.ReadAllBytes(c), "Example", "MyLoader", "Init");
-                    Directory.Delete(b, true);
+                    injector.Inject(Program.CTA.Download("FileID"), "Example", "MyLoader", "Init");
+
                     MessageBox.Show("injection completed.");
                 }
                 catch (Exception ex)
                 {
-                    Directory.Delete(b, true);
                     MessageBox.Show(ex.Message);
                     File.WriteAllText("injection error.txt", ex.Message);
                 }
