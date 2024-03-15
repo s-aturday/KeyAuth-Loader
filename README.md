@@ -5,5 +5,5 @@ This was a simple loader made in c# it does not have any protection so you gotta
 ----
 
 ### Contact
-- Discord: slle
+- Discord: mfiw
 
